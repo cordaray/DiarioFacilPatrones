@@ -40,7 +40,16 @@ public class DAOClientes extends DAOGeneral implements DAO {
     }
     
     @Override
-    public void actualizar() {
+    public void actualizar(String query) {
+        //Se debe escribir el update entero, abajo le dejo el formato de un update
+        //UPDATE Clientes set nombre = "David Cordero 2" where idCliente = 1;
+        this.conectar();
+        try {
+        stmt = conn.prepareStatement(query);
+        stmt.executeUpdate();
+        } catch (SQLException e){
+            e.getMessage();
+        }
         
     }
 
@@ -69,5 +78,7 @@ public class DAOClientes extends DAOGeneral implements DAO {
         }
        
     }
+    
+    
 
 }

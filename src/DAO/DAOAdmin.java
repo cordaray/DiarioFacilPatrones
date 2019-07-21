@@ -35,8 +35,14 @@ public class DAOAdmin extends DAOGeneral implements DAO {
     }
 
     @Override
-    public void actualizar() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public void actualizar(String query) {
+        this.conectar();
+        try {
+        stmt = conn.prepareStatement(query);
+        stmt.executeUpdate();
+        } catch (SQLException e){
+            e.getMessage();
+        }
     }
 
     @Override

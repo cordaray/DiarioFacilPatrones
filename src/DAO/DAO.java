@@ -13,7 +13,7 @@ import java.util.ArrayList;
  */
 public interface DAO {
     
-    void actualizar ();
+    void actualizar (String query);
     
     void borrar();
     
