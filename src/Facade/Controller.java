@@ -34,7 +34,7 @@ public class Controller {
         System.out.println("Inserte contraseña: ");
         String pwd = sc.next();
         ArrayList<Cliente> clientes = daoc.seleccionar("Clientes", "correo", correo);
-
+        
         //Si no devuelve ningun cliente, revisa tabla de administradores
         if (clientes.isEmpty()) {
 
@@ -65,5 +65,16 @@ public class Controller {
 
         return null;
     }
+    
+    public void cambiarContraseña(){
+       
+        //Se le pide el correo
+        //Se le pide la nueva contraseña
+        //se le pide que repita la nueva contraseña
+        //Verifica que la contraseñas calzen
+        //Actualiza info
+        
+    }
+    
 
 }

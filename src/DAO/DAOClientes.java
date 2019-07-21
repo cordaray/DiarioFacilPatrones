@@ -14,7 +14,14 @@ import java.util.ArrayList;
  * @author DacordMachine
  */
 public class DAOClientes extends DAOGeneral implements DAO {
-
+    
+    /**
+     * descripcion
+     * @param from descripcion 1
+     * @param where descripcion 2
+     * @param equals descripcion 3
+     * @return resultado
+     */
     public ArrayList<Cliente> seleccionar(String from, String where, String equals) {
 
         ArrayList<Cliente> clientes = new ArrayList();
@@ -34,17 +41,33 @@ public class DAOClientes extends DAOGeneral implements DAO {
     
     @Override
     public void actualizar() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        
     }
 
     @Override
     public void borrar() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-
+    
+    /**
+     * 
+     * @param values ejemplo: "'dacord97','1234','David Cordero'"
+     */
     @Override
-    public void agregar() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public void agregar(String values) {
+        
+        this.conectar();
+        
+        try{
+            
+            stmt = conn.prepareStatement("insert into Clientes (correo,pwd,nombre) values ("+values+")");
+            stmt.executeUpdate();
+            System.out.print("Registro agregado exitosamente!");
+            
+        } catch (SQLException e){
+            e.getMessage();
+        }
+       
     }
 
 }

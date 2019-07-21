@@ -17,7 +17,7 @@ public interface DAO {
     
     void borrar();
     
-    void agregar();   
+    void agregar(String values);   
     
     
 }

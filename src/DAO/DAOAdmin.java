@@ -45,8 +45,20 @@ public class DAOAdmin extends DAOGeneral implements DAO {
     }
 
     @Override
-    public void agregar() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public void agregar(String values) {
+        
+        this.conectar();
+
+        try {
+
+            stmt = conn.prepareStatement("insert into Admins (correo,pwd,nombre) values (" + values + ")");
+            stmt.executeUpdate();
+            System.out.print("Registro agregado exitosamente!");
+
+        } catch (SQLException e) {
+            e.getMessage();
+        }
+       
     }
     
     
