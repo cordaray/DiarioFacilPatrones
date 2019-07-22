@@ -6,7 +6,10 @@
 package Facade;
 
 import DAO.DAOAdmin;
+import DAO.DAOCategorias;
 import DAO.DAOClientes;
+import Factory.Categoria;
+import Factory.Producto;
 import Strategy.Admin;
 import Strategy.Cliente;
 import Strategy.Usuario;
@@ -73,6 +76,20 @@ public class Controller {
         //se le pide que repita la nueva contraseña
         //Verifica que la contraseñas calzen
         //Actualiza info
+        
+    }
+    
+    public void MostrarProductosPorCategorias(){
+        
+        DAOCategorias dc = new DAOCategorias();
+        ArrayList<Categoria> categorias = dc.seleccionarTodo();
+        for(Categoria c : categorias){
+            System.out.println("Categoria: "+c.getNombre().toUpperCase());
+            ArrayList<Producto> productos = c.producirProductos();
+            for(Producto p : productos){
+                System.out.println(p.getIdProducto()+". Nombre: "+p.getNombre()+" Precio: "+p.getPrecio()+" colones");
+            }
+        }
         
     }
     
