@@ -3,22 +3,20 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Strategy;
-
-import Facade.Controller;
+package Decorador;
 
 /**
  *
  * @author DacordMachine
  */
-public class MenuAdmin implements Menu {
+public class Carrito {
+    
+    private Item item;
 
-    @Override
-    public void desplegarMenu(Controller control) {
-       System.out.println("MENU ADMIN");
+    public Item getItem() {
+        return item;
     }
     
     
-
     
 }

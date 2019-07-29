@@ -46,7 +46,8 @@ public class DAOClientes extends DAOGeneral implements DAO {
         this.conectar();
         try {
         stmt = conn.prepareStatement(query);
-        stmt.executeUpdate();
+        stmt.execute();
+        System.out.println("Datos actualizado");
         } catch (SQLException e){
             e.getMessage();
         }

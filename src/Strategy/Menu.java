@@ -5,12 +5,14 @@
  */
 package Strategy;
 
+import Facade.Controller;
+
 /**
  *
  * @author DacordMachine
  */
 public interface Menu {
     
-    public void desplegarMenu();
+    public void desplegarMenu(Controller control);
     
 }

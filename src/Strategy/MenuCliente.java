@@ -13,9 +13,9 @@ import java.util.Scanner;
  * @author DacordMachine
  */
 public class MenuCliente implements Menu {
-
+  
     @Override
-    public void desplegarMenu() {
+    public void desplegarMenu(Controller control) {
        System.out.println("Menu Cliente \n"+
                           "¿Qué deseas hacer? \n"+
                           "1. Ir a comprar \n" +
@@ -25,10 +25,29 @@ public class MenuCliente implements Menu {
        Scanner sc = new Scanner(System.in);
        System.out.print("Digite una opción ->");
        int opcion = sc.nextInt();
-       if (opcion == 1){
-           Controller control = new Controller();
-           control.MostrarProductosPorCategorias();
+       switch(opcion){
+           case 1:
+               control.comprar();
+               break;
+           case 2:
+               System.out.println(" \n ===PERFIL===  \n NOMBRE: "+control.getUser().getNombre()+" \n CORREO: "+control.getUser().getCorreo());
+               System.out.println("\n¿Qué deseas cambiar en el perfil? \n"
+                                 + "1. Cambiar contraseña ");
+               System.out.print("Digite una opción ->");
+               int opcionPerfil=sc.nextInt();
+               switch(opcionPerfil){
+                   case 1:
+                       control.cambiarContraseña();
+                       this.desplegarMenu(control);
+                   break;
+               }
+               break;
+           case 3:
+               break;
+           case 4:
+               break;
        }
     }
+
        
 }
