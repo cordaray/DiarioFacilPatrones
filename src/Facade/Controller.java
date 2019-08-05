@@ -158,7 +158,8 @@ public class Controller {
         }
         
     }
-  
+    
+    //comprar
     public void comprar(){
         
         boolean listo = false;
@@ -178,6 +179,9 @@ public class Controller {
         }
         System.out.print("==ESTADO CARRITO (BETA IN PROGRESS)== \n");
         inicio.mostrarItem();
+        //Preguntar si desea seguir.
+        //Switch, si ya no quiere seguir, listo = true;
+        //agregar a carrito
         } while(listo == false);
     }
     
